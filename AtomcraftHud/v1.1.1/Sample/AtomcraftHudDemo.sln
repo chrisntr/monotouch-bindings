@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomcraftHudDemo", "AtomcraftHudDemo\AtomcraftHudDemo.csproj", "{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Debug|iPhone.Build.0 = Debug|iPhone
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Release|iPhone.Build.0 = Release|iPhone
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C6A215F8-6ABA-4C53-9AD3-E9713DD9CFA0}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AtomcraftHudDemo\AtomcraftHudDemo.csproj
+	EndGlobalSection
+EndGlobal
