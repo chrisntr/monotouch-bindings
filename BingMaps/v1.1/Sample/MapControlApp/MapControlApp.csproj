@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C44B516A-ABA3-4EA4-9392-8ADFA4FF8B62}</ProjectGuid>
+    <ProjectTypeGuids>{E613F3A2-FE9C-494F-B74E-F63BCB86FEA6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MapControlApp</RootNamespace>
+    <MainNibFile>MainWindow.xib</MainNibFile>
+    <AssemblyName>MapControlApp</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <ConsolePause>false</ConsolePause>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lBingMaps -framework QuartzCore -framework CoreData -framework CoreLocation -framework OpenGLES -framework SystemConfiguration -lxml2 -lz -ObjC -all_load"</MtouchExtraArgs>
+    <MtouchI18n />
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <ConsolePause>false</ConsolePause>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchExtraArgs>-gcc_flags "-L${ProjectDir} -lBingMaps -framework QuartzCore -framework CoreData -framework CoreLocation -framework OpenGLES -framework SystemConfiguration -lxml2 -lz -ObjC -all_load"</MtouchExtraArgs>
+    <MtouchI18n />
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchExtraArgs>-v -v -v -gcc_flags "-L${ProjectDir} -lBingMaps -framework QuartzCore -framework CoreData -framework CoreLocation -framework OpenGLES -framework SystemConfiguration -lxml2 -lz -ObjC -all_load"</MtouchExtraArgs>
+	<MtouchLink>None</MtouchLink>
+    <MtouchI18n />
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="BingMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>BingMaps.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xib.designer.cs">
+      <DependentUpon>MainWindow.xib</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="MapViewController.xib.cs">
+      <DependentUpon>MapViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="MapViewController.xib.designer.cs">
+      <DependentUpon>MapViewController.xib</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xib" />
+    <Page Include="MapViewController.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="BingMaps.Resources.bundle\BICoreDataCache.mom" />
+    <Content Include="BingMaps.Resources.bundle\bingmaps_logo.png" />
+    <Content Include="BingMaps.Resources.bundle\bingmaps_logo%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\blue_unselected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\BMMapCalloutView.nib" />
+    <Content Include="BingMaps.Resources.bundle\callout_white.png" />
+    <Content Include="BingMaps.Resources.bundle\callout_white%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\green_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\green_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\green_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\green_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\green_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\green_unselected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\Info.plist" />
+    <Content Include="BingMaps.Resources.bundle\mapConfiguration.plist" />
+    <Content Include="BingMaps.Resources.bundle\me_dot_128.png" />
+    <Content Include="BingMaps.Resources.bundle\networkDefaults.plist" />
+    <Content Include="BingMaps.Resources.bundle\orange_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\orange_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\orange_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\orange_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\orange_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\orange_unselected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\purple_unselected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\red_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\red_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\red_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\red_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\red_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\red_unselected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\shadow.png" />
+    <Content Include="BingMaps.Resources.bundle\shadow%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_selected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_selected_comp%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_unselected.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_unselected%402x.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_unselected_comp.png" />
+    <Content Include="BingMaps.Resources.bundle\yellow_unselected_comp%402x.png" />
+  </ItemGroup>
+</Project>
