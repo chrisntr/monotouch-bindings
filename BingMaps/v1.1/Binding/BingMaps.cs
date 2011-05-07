@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace BingMaps
 {
+	
 	[BaseType (typeof (NSObject))]
 	interface BMEntity {
 		
@@ -38,8 +39,7 @@ namespace BingMaps
 		IntPtr Constructor (CLLocationCoordinate2D coordinate, NSDictionary addressDictionary);  
 	}
 	
-	// Need to create BMGeometery
-
+	
 	[BaseType (typeof (UIView), Delegates=new string [] {"WeakDelegate"}, Events=new Type [] { typeof (BMMapViewDelegate)})]
 	interface BMMapView {
 		
@@ -147,6 +147,7 @@ namespace BingMaps
 		#endregion
 		 
 	}
+	
 
 	[BaseType (typeof (NSObject))]
 	[Model]
@@ -284,6 +285,7 @@ namespace BingMaps
 
 	}
 
+
 	[BaseType (typeof (NSObject))]
 	[Model]
 	interface BMReverseGeocoderDelegate {
@@ -296,8 +298,6 @@ namespace BingMaps
 		[Export ("reverseGeocoder:didFailWithError:"), EventArgs("DidFailWithError")]
 		void DidFailWithError (BMReverseGeocoder geocoder, NSError error);
 	}
-
-	// Create BMTypes.
 	
 	
 	[BaseType (typeof (NSObject))]
