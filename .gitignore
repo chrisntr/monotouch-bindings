@@ -3,3 +3,6 @@
 /BingMaps/v1.1/Sample/MapControlApp/bin
 *.userprefs
 *.pidb
+obj
+bin
+test-results
