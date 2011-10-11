@@ -9,74 +9,129 @@ using System.Runtime.InteropServices;
 
 namespace MonoMac.CorePlot {
 
-	public enum CPNumericType {
+	public enum CPTNumericType {
 		Integer, Float, Double
 	}
 
-	public enum CPErrorBarType {
+	public enum CPTErrorBarType {
 		Custom, ConstantRatio, ConstantValue
 	}
 
-	public enum CPScaleType {
-		Linear, LogN, Log10, Angular, DateTime, Category
+	public enum CPTScaleType {
+		Linear, Log, Angular, DateTime, Category
 	}
 
-	public enum CPCoordinate {
+	public enum CPTCoordinate {
 		X, Y, Z
 	}
 
 	[StructLayout (LayoutKind.Sequential)]
-	public struct CPRgbaColor {
+	public struct CPTRgbaColor {
 		public float Red, Green, Blue, Alpha;
 	}
 
-	public enum CPSign {
+	public enum CPTSign {
 		None = 0, Positive = 1, Negative = -1
 	}
 
-	public enum CPConstraint {
+	public enum CPTConstraint {
 		None, Fixed
 	}
 
-	public enum CPRectAnchor {
+	[StructLayout (LayoutKind.Sequential)]
+	public struct CPTConstraints {
+		public CPTConstraint Lower;
+		public CPTConstraint Upper;
+	}
+
+	public enum CPTRectAnchor {
 		BottomLeft, Bottom, BottomRight, Left, Right, TopLeft, Top, TopRight, Center
 	}
 
-	public enum CPAlignment {
+	public enum CPTAlignment {
 		Left, Center, Right, Top, Middle, Bottom
 	}
 
-	public enum CPDataTypeFormat {
+	public enum CPTDataTypeFormat {
 		Undefined, Integer, UnsignedInteger, FloatingPoint, ComplexFloatingPoint, Decimal
 	}
 	
-	public struct CPNumericDataType {
-		public CPDataTypeFormat DataTypeFormat;
+	public struct CPTNumericDataType {
+		public CPTDataTypeFormat DataTypeFormat;
 		public IntPtr SampleByteCount;
 		public int ByteOrder;
 	}
 
-	public enum CPPlotRangeComparisonResult {
+	public enum CPTPieDirection {
+		Clockwise,
+		CounterClockwise
+	}
+	
+	public enum CPTPlotRangeComparisonResult {
 		NumberBelowRange, NumberInRange, NumberAboveRange
 	}
 
-	public enum CPGradientBlendingMode {
+	public enum CPTScatterPlotInterpolation {
+		Linear, Stepped, Histogram
+	}
+	
+	public enum CPTGradientBlendingMode {
 		Linear, Chromatic, InverseChromatic
 	}
 
-	public enum CPGradientType {
+	public enum CPTGradientType {
 		Axial, Radial
 	}
 
-	public enum CPGraphLayerType {
+	public enum CPTGraphLayerType {
 		MinorGridLines, MajorGridLines, AxiLines, Plots, AxisLabels, AxisTitles
 	}
 
-	public enum CPAxisLabelingPolicy {
-		None, LocationsProvided, FixedInternal, PolicyAutomatic, PolicyLogarithmic
+	public enum CPTAxisLabelingPolicy {
+		None, LocationsProvided, FixedInternal, Automatic, EqualDivisions
 	}
 
-	public enum CPPlotCachePrecision {
+	public enum CPTPlotCachePrecision {
 		Auto, Double, Decimal
+	}
+
+	public enum CPTPlotField {
+		ScatterPlotFieldX = 0,
+		ScatterPlotFieldY = 1,
+			
+		PieChartWidth = 0,
+		PieChartWidthNormalized = 1,
+		PieChartSliceWidhtSum = 2,
+			
+		BarLocation = 2,
+		BarTip = 3,
+		BarBase = 4,
+
+		TradingRangeX = 0,
+		TradingRangeOpen = 1,
+		TradingRangeHigh = 2,
+		TradingRangeLow = 3,
+		TradingRangeClose = 4,
+
+		RangePlotFieldX = 0,
+		RangePlotFieldY = 1,
+		RangePlotFieldHigh = 2,
+		RangePlotFieldLow = 3,
+		RangePlotFieldLeft = 4,
+		RangePlotFieldRight = 5,
+	}
+
+	public enum CPTPlotSymbolType {
+		None, Rectangle, Ellipse, Diamond, Triangle,
+		Star, Pentagon, Hexaon, Cross, Plus, Dash,
+		Snow, Custom
+	}
+
+	public enum CPTTradingRangePlotStyle {
+		OHLC, CandleStick
+	}
+
+	public enum CPTTextAlignment {
+		Left, Center, Right
 	}
 }
